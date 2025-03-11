@@ -11,9 +11,10 @@ public class ManuUpdateScript : MonoBehaviour
     int counter = 0;
     public GameObject menu;
     public bool setmenuActive;
-
+    public GameObject targetVisualizer;
 
     public TMP_Dropdown dropDownMenu;
+    public TMP_Dropdown dropDownMenuSpeed;
 
 
     public void buttonPressed() {
@@ -44,7 +45,32 @@ public class ManuUpdateScript : MonoBehaviour
 
     public void getDropDownMenu() {
         int val = dropDownMenu.value;
+        TargetVisualizer tv = targetVisualizer.GetComponent<TargetVisualizer>();
         Debug.Log("drop down value "+" "+val);
+        if (val == 0) {
+            tv.activateBullsEye();
+            tv.dctivateEnemy();
+        }
+
+        if (val == 1) {
+            tv.activateEnemy();
+            tv.dactivateBullsEye();
+        }
+    }
+
+    public void getDropDownMenuSpeed() {
+        int val = dropDownMenuSpeed.value;
+        Debug.Log("drop down value speed" + " " + val);
+        TargetVisualizer tv = targetVisualizer.GetComponent<TargetVisualizer>();
+        if (val == 0) {
+            tv.makeEnemyFrezz();
+            tv.makeTargetFrezz();
+        }
+
+        if (val == 1) {
+            tv.addSpeedToEnemy();
+            tv.addSpeedToTarget();
+        }
     }
 
     
