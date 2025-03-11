@@ -9,8 +9,12 @@ public class ArrowRotation : MonoBehaviour
     private Rigidbody rb;
     private void FixedUpdate()
     {
-        transform.forward =
-            Vector3.Slerp(transform.forward, rb.velocity.normalized, Time.fixedDeltaTime);
+        if (rb.velocity.sqrMagnitude > 0.01f) // Ensuring velocity isn't near-zero
+        {
+            transform.forward =
+                Vector3.Slerp(transform.forward, rb.velocity.normalized, Time.fixedDeltaTime * 10f);
+        }
     }
+
 
 }

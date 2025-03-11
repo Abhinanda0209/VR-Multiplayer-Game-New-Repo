@@ -29,12 +29,16 @@ public class MoveBackAndForth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Shoot");
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
         Score++;
         scoreText.text = "Score > " + Score.ToString();
         Debug.Log("Shoot");
     }
-
-        private void Update()
+    private void Update()
     {
         // Increment timer each frame
         timer += Time.deltaTime;
