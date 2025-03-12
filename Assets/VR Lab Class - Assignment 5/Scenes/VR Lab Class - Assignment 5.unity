@@ -218,7 +218,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 3468101}
-    PlayerPrefab: {fileID: 7216047633976425198, guid: a1b322bff0830404eb56c585b5d8143e, type: 3}
+    PlayerPrefab: {fileID: 0}
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: a9d1c135281555f4f9000e42972e7f51, type: 2}
@@ -699,7 +699,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 236912582}
-  - component: {fileID: 236912581}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -707,42 +706,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &236912581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236912580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0005090c9b01ef243a4f552c1386bf0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menu: {fileID: 1196039982}
-  spawnDistance: 2
-  head: {fileID: 0}
-  showbutton:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Showbutton
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: c8920394-aabb-4bfc-a283-83b66a41ede2
-      m_Processors: 
-      m_Interactions: Press
-      m_SingletonActionBindings:
-      - m_Name: 
-        m_Id: 4c50f080-9b88-403a-bbad-38ea418eb564
-        m_Path: <XRController>{LeftHand}/menuButton
-        m_Interactions: 
-        m_Processors: 
-        m_Groups: 
-        m_Action: Showbutton
-        m_Flags: 0
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  setmenuActive: 0
 --- !u!4 &236912582
 Transform:
   m_ObjectHideFlags: 0
@@ -1659,6 +1622,27 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &769395294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769395286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2386243482
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &779395317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,6 +1773,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 784817292}
+  - component: {fileID: 784817294}
   - component: {fileID: 784817293}
   m_Layer: 0
   m_Name: TargetManager
@@ -1835,6 +1820,27 @@ MonoBehaviour:
   - {fileID: 1389068658}
   - {fileID: 1924570512}
   checkVisibility: 0
+--- !u!114 &784817294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784817291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2726667394
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &785564774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,6 +2227,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8832964881147904658, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1389068659}
+    - targetCorrespondingSourceObject: {fileID: 8832964881147904658, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1389068664}
   m_SourcePrefab: {fileID: 100100000, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
 --- !u!1 &934420896
 GameObject:
@@ -3503,8 +3512,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1316260025}
-        m_TargetAssemblyTypeName: ManuUpdateScript, Assembly-CSharp
-        m_MethodName: getDropDownMenuSpeed
+        m_TargetAssemblyTypeName: MenuUpdateScript, Assembly-CSharp
+        m_MethodName: GetDropDownMenuSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3869,6 +3878,7 @@ GameObject:
   - component: {fileID: 1316260022}
   - component: {fileID: 1316260021}
   - component: {fileID: 1316260020}
+  - component: {fileID: 1316260026}
   - component: {fileID: 1316260025}
   m_Layer: 5
   m_Name: ScoreCanvas
@@ -3977,7 +3987,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.039, y: 2.1}
+  m_AnchoredPosition: {x: 3.039, y: 3.11}
   m_SizeDelta: {x: 1000, y: 750}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1316260025
@@ -3992,12 +4002,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98929fb9761059e4f855dbb3a2d9dc04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 1081375158}
   menu: {fileID: 1872456276}
   setmenuActive: 0
-  targetVisualizer: {fileID: 784817291}
+  counter: 0
   dropDownMenu: {fileID: 1536820105}
   dropDownMenuSpeed: {fileID: 1226511019}
+--- !u!114 &1316260026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316260019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2169898783
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1326780018
 GameObject:
   m_ObjectHideFlags: 0
@@ -4295,6 +4325,27 @@ MonoBehaviour:
   speed: 3
   moveDuration: 2
   moveDirection: 0
+--- !u!114 &1389068664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389068658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1205086763
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1001 &1429088365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4385,6 +4436,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8832964881147904658, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
       insertIndex: -1
       addedObject: {fileID: 769395290}
+    - targetCorrespondingSourceObject: {fileID: 8832964881147904658, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 769395294}
   m_SourcePrefab: {fileID: 100100000, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
 --- !u!1 &1443682138
 GameObject:
@@ -4844,8 +4898,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1316260025}
-        m_TargetAssemblyTypeName: ManuUpdateScript, Assembly-CSharp
-        m_MethodName: getDropDownMenu
+        m_TargetAssemblyTypeName: MenuUpdateScript, Assembly-CSharp
+        m_MethodName: GetDropDownMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6026,6 +6080,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8832964881147904658, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2010796027}
+    - targetCorrespondingSourceObject: {fileID: 8832964881147904658, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2010796032}
   m_SourcePrefab: {fileID: 100100000, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
 --- !u!1 &1888939373
 GameObject:
@@ -6475,6 +6532,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8832964881147904658, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1924570513}
+    - targetCorrespondingSourceObject: {fileID: 8832964881147904658, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1924570518}
   m_SourcePrefab: {fileID: 100100000, guid: c26e8c19d8cdac1479dfd6f1b18b3864, type: 3}
 --- !u!1 &1924570512 stripped
 GameObject:
@@ -6520,6 +6580,27 @@ MonoBehaviour:
   speed: 3
   moveDuration: 2
   moveDirection: 0
+--- !u!114 &1924570518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924570512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 271002629
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1938851830
 GameObject:
   m_ObjectHideFlags: 0
@@ -6639,6 +6720,27 @@ MonoBehaviour:
   speed: 3
   moveDuration: 2
   moveDirection: 0
+--- !u!114 &2010796032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010796026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 922001672
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &2026521923
 GameObject:
   m_ObjectHideFlags: 0
@@ -6728,11 +6830,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1727062247151061484, guid: 1434ddbc9128eb648a292c55cd6258e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.399
+      value: 3.63
       objectReference: {fileID: 0}
     - target: {fileID: 1727062247151061484, guid: 1434ddbc9128eb648a292c55cd6258e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.368
+      value: 1.168
       objectReference: {fileID: 0}
     - target: {fileID: 1727062247151061484, guid: 1434ddbc9128eb648a292c55cd6258e1, type: 3}
       propertyPath: m_LocalPosition.z
