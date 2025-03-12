@@ -110,7 +110,7 @@ public class MenuUpdateScript : NetworkBehaviour
     {
         //Debug.Log("GetDropdownSPEED menu before checking owner");
         if (!IsOwner) return;
-        Debug.Log("GetDropdownSPEED menu AFTER checking owner");
+        //Debug.Log("GetDropdownSPEED menu AFTER checking owner");
 
         speedSelection.Value = dropDownMenuSpeed.value;
         RequestSpeedSelectionServerRpc(speedSelection.Value);
@@ -125,7 +125,7 @@ public class MenuUpdateScript : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void RequestSpeedSelectionServerRpc(int selection)
     {
-        Debug.Log("RequestSpeedSelectionServerRpc");
+        //Debug.Log("RequestSpeedSelectionServerRpc");
         targetVisualizer.ActivateSpeedSelection(selection);
     }
 
