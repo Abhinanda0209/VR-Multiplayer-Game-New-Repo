@@ -11,6 +11,9 @@ public class MenuUpdateScript : NetworkBehaviour
     public int counter = 0;
     public TMP_Dropdown dropDownMenu;
     public TMP_Dropdown dropDownMenuSpeed;
+   
+    [SerializeField] private GameObject endMenu;
+    [SerializeField] private GameObject scoreCanvas;
 
     private NetworkVariable<int> menuSelection = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
     private NetworkVariable<int> speedSelection = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
@@ -94,6 +97,24 @@ public class MenuUpdateScript : NetworkBehaviour
         {
             setmenuActive = !setmenuActive;
             menuActiveState.Value = setmenuActive;
+            endMenu.SetActive(false);
+            scoreCanvas.GetComponent<TimerScript>().timeRemaining = new NetworkVariable<float>(
+        0f,
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Server
+    ); 
+        }
+    }
+
+
+    public void buttonPressedExit()
+    {
+        if (!IsOwner) return;
+
+        counter++;
+        if (counter % 3 == 0)
+        {
+            Application.Quit();
         }
     }
 
